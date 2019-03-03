@@ -5,6 +5,7 @@
 ## Warning !
 
   1 - The discord.py library does not work with python versions greater than 3.6;
+  
   2 - Using a self bot in public on discord is liable to a permanent ban of your account. If you get banned, the developer will
   not be held responsible.
 
