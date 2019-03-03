@@ -12,28 +12,28 @@
 
   ## Dependencies
 
-    [python 3.6.x](https://www.python.org/downloads/release/python-360/)
+   [python 3.6.x](https://www.python.org/downloads/release/python-360/)
 
-    python module :
-    - discord.py;
+   python module :
+   - discord.py;
 
-    pip install 'discord.py'
+   pip install 'discord.py'
 
-    or click on 'install_requirements.bat'.
+   or click on 'install_requirements.bat'.
 
 
 
-    1.Put randpass in the folder wish then move in this one with 'cd (path)';
-    2.python randpass.py;
+   1.Put randpass in the folder wish then move in this one with 'cd (path)';
+   2.python randpass.py;
 
-    a file named data.txt should appear in the folder where randpass is located
+   a file named data.txt should appear in the folder where randpass is located
 
 # Informations
 
   ## Version
 
-    - BETA (19/01/2019) : current
+   - BETA (19/01/2019) : **current**
 
   ## Author
 
-    - Arobqse_
+   **- Arobqse_**
