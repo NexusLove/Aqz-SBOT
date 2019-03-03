@@ -32,7 +32,7 @@
 
   ## Version
 
-    - BETA (19/01/2019) : **_current_**
+    - BETA (19/01/2019) : **current**
 
   ## Author
 
