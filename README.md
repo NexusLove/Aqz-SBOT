@@ -32,8 +32,8 @@
 
   ## Version
 
-    - BETA (19/01/2019) : **current**
+    - BETA (19/01/2019) : current
 
   ## Author
 
-    **- Arobqse_**
+    - Arobqse_
