@@ -5,7 +5,6 @@ from discord.ext.commands import Bot
 from colorama import Fore
 
 pf = '/'
-token = input(warn + 'Put your token : ')
 
 red, blue, green, yellow, purple, pink = (
 	0xFA8072, 0x40E0D0, 0x7CFC00,
@@ -17,6 +16,8 @@ add, remove, diagnosis, warn, error = (
 	Fore.BLUE + ' [*] ' + Fore.RESET,
 	Fore.YELLOW + ' [!] ' + Fore.RESET,
 	Fore.RED + ' [x] ' + Fore.RESET)
+
+token = input(warn + 'Put your token : ')
 
 bot = Bot(command_prefix=pf, self_bot=True)
 bot.remove_command('help')
