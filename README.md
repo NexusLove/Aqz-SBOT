@@ -1,6 +1,6 @@
 # Ur4BOT
 
-  Ur4BOT is a fun / utility discord self bot !
+  Ur4BOT is a fun / utility discord self bot !(https://www.noelshack.com/2019-11-4-1552577649-help.png)
 
 ## Warning !
 
