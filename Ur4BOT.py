@@ -1,9 +1,10 @@
 # Ur4BOT By Arobqse_
 
-import discord, asyncio, random, os, sys
+import discord, asyncio, random, sys, os
 from discord.ext.commands import Bot
 from colorama import Fore
 
+token = input('Your token : ')
 pf = '/'
 
 red, blue, green, yellow, purple, pink = (
@@ -16,8 +17,6 @@ add, remove, diagnosis, warn, error = (
 	Fore.BLUE + ' [*] ' + Fore.RESET,
 	Fore.YELLOW + ' [!] ' + Fore.RESET,
 	Fore.RED + ' [x] ' + Fore.RESET)
-
-token = input(warn + 'Put your token : ')
 
 bot = Bot(command_prefix=pf, self_bot=True)
 bot.remove_command('help')
@@ -36,7 +35,7 @@ async def help(ctx):
 	embed.add_field(name='/uload [time]', value='The message will loaddaol.', inline=False)
 	embed.add_field(name='/load [time]', value='The message will looooooooooad.', inline=False)
 	embed.add_field(name='/play [txt]', value='Set your custom status to play.', inline=False)
-	embed.add_field(name='/stream [txt]', value='Do you want to feel like streamer ? .', inline=False)
+	embed.add_field(name='/stream [link] [txt]', value='Do you want to feel like streamer ? .', inline=False)
 	embed.add_field(name='/listen [txt]', value='What is this noise ? .', inline=False)
 	embed.add_field(name='/watch [txt]', value='I am watching you.', inline=False)
 	embed.add_field(name='/gp [user]', value='Who ping me ? .', inline=False)
@@ -169,29 +168,53 @@ async def load(ctx, time):
 	wait()
 
 @bot.command(pass_context = True)
-async def play(ctx, txt):
+async def play(ctx, *argv):
 	await bot.delete_message(ctx.message)
+
+	txt = ''
+
+	for word in argv:
+		txt = txt + ' ' + word
+
 	await bot.change_presence(game=discord.Game(name=txt, type=0))
 	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=green)
 	await bot.say(embed=embed)
 
 @bot.command(pass_context = True)
-async def stream(ctx, txt, link):
+async def stream(ctx, link, *argv):
 	await bot.delete_message(ctx.message)
+
+	txt = ''
+
+	for word in argv:
+		txt = txt + ' ' + word
+
 	await bot.change_presence(game=discord.Game(name=txt, url=link, type=1))
 	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "' with the url : " + link + " .", color=purple)
 	await bot.say(embed=embed)
 
 @bot.command(pass_context = True)
-async def listen(ctx, txt):
+async def listen(ctx, *argv):
 	await bot.delete_message(ctx.message)
+
+	txt = ''
+
+	for word in argv:
+		txt = txt + ' ' + word
+
 	await bot.change_presence(game=discord.Game(name=txt, type=2))
 	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
 	await bot.say(embed=embed)
 
 @bot.command(pass_context = True)
-async def watch(ctx, txt):
+async def watch(ctx, *argv):
 	await bot.delete_message(ctx.message)
+
+	txt = ''
+
+	for word in argv:
+		txt = txt + ' ' + word
+
 	await bot.change_presence(game=discord.Game(name=txt, type=3))
 	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
 	await bot.say(embed=embed)
@@ -242,6 +265,7 @@ async def calc(ctx, nbr1, op, nbr2):
 @bot.command(pass_context = True)
 async def dm_pub(ctx, server_id, *argv):
 	await bot.delete_message(ctx.message)
+
 	msg = ''
 
 	for word in argv:
@@ -262,8 +286,8 @@ async def dm_pub(ctx, server_id, *argv):
 
 @bot.command(pass_context = True)
 async def stop(ctx):
-	ebd_stop = discord.Embed(description='See you soon ! :leaves:', color=random.choice([red, blue, green, yellow, purple, pink]))
-	await bot.say(embed=ebd_stop)
+	embed = discord.Embed(description='See you soon ! :leaves:', color=random.choice([red, blue, green, yellow, purple, pink]))
+	await bot.say(embed=embed)
 	sys.exit()
 
 bot.run(token, bot=False)
