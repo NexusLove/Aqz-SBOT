@@ -32,6 +32,7 @@ async def help(ctx):
 	embed.set_author(name='Help')
 	embed.add_field(name='/sl [msg]', value='Add a spoiler to your message.', inline=False)
 	embed.add_field(name='/ls [msg]', value='Add leet speak to your message.', inline=False)
+	embed.add_field(name='/hug [user]', value='I love U :3 !', inline=False)
 	embed.add_field(name='/uload [time]', value='The message will loaddaol.', inline=False)
 	embed.add_field(name='/load [time]', value='The message will looooooooooad.', inline=False)
 	embed.add_field(name='/play [txt]', value='Set your custom status to play.', inline=False)
