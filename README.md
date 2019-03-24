@@ -24,8 +24,8 @@
 # Informations
 
   ## Version
-
-   - BETA (19/01/2019) : **current**
+   - 0.3 (24/03/2019) : **current**
+   - BETA (19/01/2019) : last
 
   ## Author
 
