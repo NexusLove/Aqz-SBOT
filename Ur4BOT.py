@@ -169,8 +169,14 @@ async def load(ctx, time):
 	wait()
 
 @bot.command(pass_context=True)
-async def embed(ctx, txt):
+async def embed(ctx, *argv):
 	await bot.delete_message(ctx.message)
+
+	txt = ''
+
+	for word in argv:
+		txt = txt + ' ' + word
+
 	embed = discord.Embed(description=str(txt), color=random.choice([red, blue, green, yellow, purple]))
 	await bot.say(embed=embed)
 
