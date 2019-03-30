@@ -6,13 +6,7 @@ from colorama import Fore
 
 token = input('Token : ')
 
-red, blue, green, yellow, purple, pink = (
-
-	0xFA8072, 0x40E0D0, 0x7CFC00,
-	0xEEE8AA, 0xDDA0DD, 0xFFC0CB
-
-)
-
+red, blue, green, yellow, purple = (0xFA8072, 0x40E0D0, 0x7CFC00, 0xEEE8AA, 0xDDA0DD)
 add, remove, diagnosis, warn, error = (' [+] ', ' [-] ', ' [*] ', ' [!] ', ' [x] ')
 
 bot = Bot(command_prefix='/', self_bot=True)
@@ -22,16 +16,17 @@ bot.remove_command('help')
 async def on_ready():
 	print(add + bot.user.name + ' : [ON]\n' + diagnosis + bot.user.name + ' ID : ' + bot.user.id)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def help(ctx):
 	await bot.delete_message(ctx.message)
-	embed = discord.Embed(title='To install Ur4BOT self-bot', url='https://github.com/Ar0basL4/Ur4BOT', color=random.choice([red, blue, green, yellow, purple, pink]))
+	embed = discord.Embed(title='To install Ur4BOT self-bot', url='https://github.com/Ar0basL4/Ur4BOT', color=random.choice([red, blue, green, yellow, purple]))
 	embed.set_author(name='Help')
 	embed.add_field(name='/sl [msg]', value='Add a spoiler to your message.', inline=False)
 	embed.add_field(name='/ls [msg]', value='Add leet speak to your message.', inline=False)
 	embed.add_field(name='/hug [user]', value='I love U :3 !', inline=False)
 	embed.add_field(name='/uload [time]', value='The message will loaddaol.', inline=False)
 	embed.add_field(name='/load [time]', value='The message will looooooooooad.', inline=False)
+	embed.add_field(name='/embed [txt]', value='Embed !', inline=False)
 	embed.add_field(name='/play [txt]', value='Set your custom status to play.', inline=False)
 	embed.add_field(name='/stream [link] [txt]', value='Do you want to feel like streamer ? .', inline=False)
 	embed.add_field(name='/listen [txt]', value='What is this noise ? .', inline=False)
@@ -42,7 +37,7 @@ async def help(ctx):
 	embed.add_field(name='/stop', value='Hoping to see you again.', inline=False)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def sl(ctx, *argv):
 	await bot.delete_message(ctx.message)
 	result = ''
@@ -52,7 +47,7 @@ async def sl(ctx, *argv):
 
 	await bot.say('||' + result + '||')
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def ls(ctx, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -87,7 +82,7 @@ async def ls(ctx, *argv):
 
 	await bot.say(result)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def hug(ctx, user):
 	await bot.delete_message(ctx.message)
 	hugs = ['https://tenor.com/FQNP.gif', 'https://tenor.com/SjBB.gif', 'https://tenor.com/vQcO.gif']
@@ -95,7 +90,7 @@ async def hug(ctx, user):
 	author, tag = author.split('#')
 	await bot.say(str(author) + ' hugging ' + str(user) + ' :heart: ' + random.choice(hugs))
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def uload(ctx, time):
 	wt = (int(time) / 34)
 
@@ -125,7 +120,7 @@ async def uload(ctx, time):
 
 	await bot.delete_message(ctx.message)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def load(ctx, time):
 	wt = (int(time) / 34)
 
@@ -173,7 +168,13 @@ async def load(ctx, time):
 	await bot.edit_message(ctx.message, '[####################] `100%`')
 	wait()
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
+async def embed(ctx, txt):
+	await bot.delete_message(ctx.message)
+	embed = discord.Embed(description=str(txt), color=random.choice([red, blue, green, yellow, purple]))
+	await bot.say(embed=embed)
+
+@bot.command(pass_context=True)
 async def play(ctx, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -183,10 +184,10 @@ async def play(ctx, *argv):
 		txt = txt + ' ' + word
 
 	await bot.change_presence(game=discord.Game(name=txt, type=0))
-	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=green)
+	embed = discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=green)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def stream(ctx, link, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -196,10 +197,10 @@ async def stream(ctx, link, *argv):
 		txt = txt + ' ' + word
 
 	await bot.change_presence(game=discord.Game(name=txt, url=link, type=1))
-	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "' with the url : " + link + " .", color=purple)
+	embed = discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "' with the url : " + link + " .", color=purple)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def listen(ctx, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -209,10 +210,10 @@ async def listen(ctx, *argv):
 		txt = txt + ' ' + word
 
 	await bot.change_presence(game=discord.Game(name=txt, type=2))
-	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
+	embed = discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def watch(ctx, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -221,45 +222,45 @@ async def watch(ctx, *argv):
 	for word in argv:
 		txt = txt + ' ' + word
 
-	await bot.change_presence(game=discord.Game(name=txt, type=3))
-	embed=discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
+	await bot.change_presence(game = discord.Game(name=txt, type=3))
+	embed = discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def gp(ctx):
 	await bot.delete_message(ctx.message)
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def calc(ctx, nbr1, op, nbr2):
 	await bot.delete_message(ctx.message)
 
 	if op == '+':
 		result = (int(nbr1) + int(nbr2))
-		embed=discord.Embed(title='Calculator', color=purple)
+		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
 		embed.add_field(name='Result : ', value=result, inline=False)
 		await bot.say(embed=embed)
 
 	elif op == '-':
-		result = (int(nbr1) - int(nbr2))
-		embed=discord.Embed(title='Calculator', color=purple)
+		result = (int(nbr1) + int(nbr2))
+		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
 		embed.add_field(name='Result : ', value=result, inline=False)
 		await bot.say(embed=embed)
 
 	elif op == '*':
-		result = (int(nbr1) * int(nbr2))
-		embed=discord.Embed(title='Calculator', color=purple)
+		result = (int(nbr1) + int(nbr2))
+		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
 		embed.add_field(name='Result : ', value=result, inline=False)
 		await bot.say(embed=embed)
 
-	elif op == ':':
-		result = (int(nbr1) / int(nbr2))
-		embed=discord.Embed(title='Calculator', color=purple)
+	elif op == '/':
+		result = (int(nbr1) + int(nbr2))
+		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
 		embed.add_field(name='Result : ', value=result, inline=False)
@@ -268,7 +269,7 @@ async def calc(ctx, nbr1, op, nbr2):
 	else:
 		pass
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def dm_pub(ctx, server_id, time, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -292,10 +293,10 @@ async def dm_pub(ctx, server_id, time, *argv):
 		else:
 			pass
 
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def stop(ctx):
 	await bot.delete_message(ctx.message)
-	embed = discord.Embed(description='See you soon ! :leaves:', color=random.choice([red, blue, green, yellow, purple, pink]))
+	embed = discord.Embed(description='See you soon ! :leaves:', color=random.choice([red, blue, green, yellow, purple]))
 	await bot.say(embed=embed)
 	sys.exit()
 
