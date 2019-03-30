@@ -24,9 +24,9 @@ async def help(ctx):
 	embed.add_field(name='/sl [msg]', value='Add a spoiler to your message.', inline=False)
 	embed.add_field(name='/ls [msg]', value='Add leet speak to your message.', inline=False)
 	embed.add_field(name='/hug [user]', value='I love U :3 !', inline=False)
-	embed.add_field(name='/uload [time]', value='The message will loaddaol.', inline=False)
+	embed.add_field(name='/iload [time]', value='The message will loaddaol.', inline=False)
 	embed.add_field(name='/load [time]', value='The message will looooooooooad.', inline=False)
-	embed.add_field(name='/embed [txt]', value='Embed !', inline=False)
+	embed.add_field(name='/embed [color] [txt]', value='Embed !', inline=False)
 	embed.add_field(name='/play [txt]', value='Set your custom status to play.', inline=False)
 	embed.add_field(name='/stream [link] [txt]', value='Do you want to feel like streamer ? .', inline=False)
 	embed.add_field(name='/listen [txt]', value='What is this noise ? .', inline=False)
@@ -37,7 +37,7 @@ async def help(ctx):
 	embed.add_field(name='/stop', value='Hoping to see you again.', inline=False)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['spoil'])
 async def sl(ctx, *argv):
 	await bot.delete_message(ctx.message)
 	result = ''
@@ -47,7 +47,7 @@ async def sl(ctx, *argv):
 
 	await bot.say('||' + result + '||')
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['leatspeak'])
 async def ls(ctx, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -91,7 +91,7 @@ async def hug(ctx, user):
 	await bot.say(str(author) + ' hugging ' + str(user) + ' :heart: ' + random.choice(hugs))
 
 @bot.command(pass_context=True)
-async def uload(ctx, time):
+async def iload(ctx, time):
 	wt = (int(time) / 34)
 
 	def wait():
@@ -168,16 +168,31 @@ async def load(ctx, time):
 	await bot.edit_message(ctx.message, '[####################] `100%`')
 	wait()
 
-@bot.command(pass_context=True)
-async def embed(ctx, *argv):
+@bot.command(pass_context=True, aliases=['eb', 'emb'])
+async def embed(ctx, color, *argv):
 	await bot.delete_message(ctx.message)
+
+	if str(color) == 'red':
+		color = 0xFA8072
+
+	elif str(color) == 'blue':
+		color = 0x40E0D0
+
+	elif str(color) == 'green':
+		color = 0x7CFC00
+
+	elif str(color) == 'yellow':
+		color = 0xEEE8AA
+
+	elif str(color) == 'purple':
+		color = 0xDDA0DD
 
 	txt = ''
 
 	for word in argv:
 		txt = txt + ' ' + word
 
-	embed = discord.Embed(description=str(txt), color=random.choice([red, blue, green, yellow, purple]))
+	embed = discord.Embed(description=str(txt), color=color)
 	await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
@@ -232,7 +247,7 @@ async def watch(ctx, *argv):
 	embed = discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "'.", color=yellow)
 	await bot.say(embed=embed)
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['ghostping'])
 async def gp(ctx):
 	await bot.delete_message(ctx.message)
 
@@ -299,7 +314,7 @@ async def dm_pub(ctx, server_id, time, *argv):
 		else:
 			pass
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['exit'])
 async def stop(ctx):
 	await bot.delete_message(ctx.message)
 	embed = discord.Embed(description='See you soon ! :leaves:', color=random.choice([red, blue, green, yellow, purple]))
