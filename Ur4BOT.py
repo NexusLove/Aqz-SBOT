@@ -264,7 +264,7 @@ async def calc(ctx, nbr1, op, nbr2):
 		await bot.say(embed=embed)
 
 	elif op == '-':
-		result = (int(nbr1) + int(nbr2))
+		result = (int(nbr1) - int(nbr2))
 		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
@@ -272,7 +272,7 @@ async def calc(ctx, nbr1, op, nbr2):
 		await bot.say(embed=embed)
 
 	elif op == '*':
-		result = (int(nbr1) + int(nbr2))
+		result = (int(nbr1) * int(nbr2))
 		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
@@ -280,7 +280,7 @@ async def calc(ctx, nbr1, op, nbr2):
 		await bot.say(embed=embed)
 
 	elif op == '/':
-		result = (int(nbr1) + int(nbr2))
+		result = (int(nbr1) / int(nbr2))
 		embed = discord.Embed(title='Calculator', color=random.choice([red, blue, green, yellow, purple]))
 		embed.set_thumbnail(url='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519630-131_Calculator-128.png')
 		embed.add_field(name='Input :', value=str(nbr1) + op + str(nbr2), inline=True)
