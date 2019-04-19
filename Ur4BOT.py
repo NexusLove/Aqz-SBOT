@@ -1,8 +1,7 @@
 # Ur4BOT by Arobqse_
 
-import discord, asyncio, random, time, sys, os
+import discord, asyncio, random, sys, os
 from discord.ext.commands import Bot
-from colorama import Fore
 
 token = input('Token : ')
 
@@ -11,6 +10,16 @@ add, remove, diagnosis, warn, error = (' [+] ', ' [-] ', ' [*] ', ' [!] ', ' [x]
 
 bot = Bot(command_prefix='/', self_bot=True)
 bot.remove_command('help')
+
+async def status_task(s1, s2, s3, link):
+
+	while True:
+		await bot.change_presence(game=discord.Game(name=str(s1), url=str(link), type=1))
+		await asyncio.sleep(10)
+		await bot.change_presence(game=discord.Game(name=str(s2), url=str(link), type=1))
+		await asyncio.sleep(10)
+		await bot.change_presence(game=discord.Game(name=str(s3), url=str(link), type=1))
+		await asyncio.sleep(10)
 
 @bot.event
 async def on_ready():
@@ -21,20 +30,20 @@ async def help(ctx):
 	await bot.delete_message(ctx.message)
 	embed = discord.Embed(title='To install Ur4BOT self-bot', url='https://github.com/Ar0basL4/Ur4BOT', color=random.choice([red, blue, green, yellow, purple]))
 	embed.set_author(name='Help')
-	embed.add_field(name='/sl [msg]', value='Add a spoiler to your message.', inline=False)
-	embed.add_field(name='/ls [msg]', value='Add leet speak to your message.', inline=False)
-	embed.add_field(name='/hug [user]', value='I love U :3 !', inline=False)
-	embed.add_field(name='/iload [time]', value='The message will loaddaol.', inline=False)
-	embed.add_field(name='/load [time]', value='The message will looooooooooad.', inline=False)
-	embed.add_field(name='/embed [color] [txt]', value='Embed !', inline=False)
-	embed.add_field(name='/play [txt]', value='Set your custom status to play.', inline=False)
-	embed.add_field(name='/stream [link] [txt]', value='Do you want to feel like streamer ? .', inline=False)
-	embed.add_field(name='/listen [txt]', value='What is this noise ? .', inline=False)
-	embed.add_field(name='/watch [txt]', value='I am watching you.', inline=False)
-	embed.add_field(name='/gp [user]', value='Who ping me ? .', inline=False)
-	embed.add_field(name='/calc [nbr1] [op] [nbr2]', value='1 + 1 = ? .', inline=False)
-	embed.add_field(name='/dm_pub [server_id] [deadline] [msg]', value='If you want to be hated by the community.', inline=False)
-	embed.add_field(name='/stop', value='Hoping to see you again.', inline=False)
+	embed.add_field(name='/sl [msg]', value='`Add a spoiler to your message.`', inline=False)
+	embed.add_field(name='/ls [msg]', value='`Add leet speak to your message.`', inline=False)
+	embed.add_field(name='/hug [user]', value='`I love U :3 !`', inline=False)
+	embed.add_field(name='/iload [time]', value='`The message will loaddaol.`', inline=False)
+	embed.add_field(name='/load [time]', value='`The message will looooooooooad.`', inline=False)
+	embed.add_field(name='/embed [color] [txt]', value='`Embed is comming !`', inline=False)
+	embed.add_field(name='/play [txt]', value='`Set your custom status to play.`', inline=False)
+	embed.add_field(name='/stream [link] [txt]', value='`Do you want to feel like streamer ? .`', inline=False)
+	embed.add_field(name='/listen [txt]', value='`What is this noise ? .`', inline=False)
+	embed.add_field(name='/watch [txt]', value='`I am watching you.`', inline=False)
+	embed.add_field(name='/gp [user]', value='`Who ping me ? .`', inline=False)
+	embed.add_field(name='/calc [nbr1] [op] [nbr2]', value='`1 + 1 = ? .`', inline=False)
+	embed.add_field(name='/dm_pub [server_id] [deadline] [msg]', value='`If you want to be hated by the community.`', inline=False)
+	embed.add_field(name='/stop', value='`Hoping to see you again.`', inline=False)
 	await bot.say(embed=embed)
 
 @bot.command(pass_context=True, aliases=['spoil'])
@@ -95,28 +104,26 @@ async def iload(ctx, time):
 	wt = (int(time) / 34)
 
 	def wait():
-		asyncio.wait(wt)
-	
-	while True:
-		await bot.edit_message(ctx.message, '[~/.*                ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[    ~/.*            ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[        ~/.*        ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[            ~/.*    ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[                ~/.*] ')
-		wait()
-		await bot.edit_message(ctx.message, '[            *.\~    ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[        *.\~        ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[    *.\~            ] ')
-		wait()
-		await bot.edit_message(ctx.message, '[*.\~                ] ')
-		wait()
-		break
+		asyncio.sleep(wt)
+
+	await bot.edit_message(ctx.message, '[~/.*                ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[    ~/.*            ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[        ~/.*        ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[            ~/.*    ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[                ~/.*] ')
+	wait()
+	await bot.edit_message(ctx.message, '[            *.\~    ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[        *.\~        ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[    *.\~            ] ')
+	wait()
+	await bot.edit_message(ctx.message, '[*.\~                ] ')
+	wait()
 
 	await bot.delete_message(ctx.message)
 
@@ -125,7 +132,7 @@ async def load(ctx, time):
 	wt = (int(time) / 34)
 
 	def wait():
-		asyncio.wait(wt)
+		asyncio.sleep(wt)
 
 	await bot.edit_message(ctx.message, '[#                                                       ] `5%`')
 	wait()
@@ -168,7 +175,7 @@ async def load(ctx, time):
 	await bot.edit_message(ctx.message, '[####################] `100%`')
 	wait()
 
-@bot.command(pass_context=True, aliases=['eb', 'emb'])
+@bot.command(pass_context=True, aliases=['e', 'eb', 'emb'])
 async def embed(ctx, color, *argv):
 	await bot.delete_message(ctx.message)
 
@@ -195,6 +202,20 @@ async def embed(ctx, color, *argv):
 	embed = discord.Embed(description=str(txt), color=color)
 	await bot.say(embed=embed)
 
+@bot.command(pass_context = True)
+async def clear(ctx, nbr):
+	await bot.delete_message(ctx.message)
+	msgs = []
+
+	async for msg in bot.logs_from(ctx.message.channel, limit=int(nbr) + 1):
+		msgs.append(msg)
+
+	try:
+		await bot.delete_messages(msgs)
+
+	except:
+		pass
+
 @bot.command(pass_context=True)
 async def play(ctx, *argv):
 	await bot.delete_message(ctx.message)
@@ -220,6 +241,21 @@ async def stream(ctx, link, *argv):
 	await bot.change_presence(game=discord.Game(name=txt, url=link, type=1))
 	embed = discord.Embed(title='Done !', description='Your status has been updated on ' + "'" + txt + "' with the url : " + link + " .", color=purple)
 	await bot.say(embed=embed)
+
+@bot.command(pass_context=True)
+async def mstream(ctx, link):
+	await bot.delete_message(ctx.message)
+
+	embed = discord.Embed(title='Terminal', description='look at the console !', color=random.choice([red, blue, green, yellow, purple]))
+	embed.set_thumbnail(url='https://cdn.macpaw.com/uploads/images/terminal1234.png')
+	await bot.say(embed=embed)
+	await bot.say(embed)
+
+	s1 = input(warn + 'First sentence : ')
+	s2 = input(warn + '2nd sentence : ')
+	s3 = input(warn + '3rd : ')
+
+	bot.loop.create_task(status_task(s1, s2, s3, link))
 
 @bot.command(pass_context=True)
 async def listen(ctx, *argv):
@@ -304,7 +340,7 @@ async def dm_pub(ctx, server_id, time, *argv):
 		if int(server.id) == int(server_id):
 
 			for member in server.members:
-				time.sleep(int(time))
+				await asyncio.sleep(int(time))
 
 				try:
 					await bot.send_message(member, msg)
