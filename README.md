@@ -2,7 +2,7 @@
 
   Ur4BOT is a fun / utility discord self bot !
   
-  ![HELP](https://image.noelshack.com/fichiers/2019/11/4/1552577649-help.png)
+  ![HELP](http://image.noelshack.com/fichiers/2019/16/5/1555666494-capture.png)
 ## Warning !
 
   1 - The discord.py library does not work with python versions greater than 3.6;
