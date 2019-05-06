@@ -326,30 +326,6 @@ async def calc(ctx, nbr1, op, nbr2):
 	else:
 		pass
 
-@bot.command(pass_context=True)
-async def dm_pub(ctx, server_id, time, *argv):
-	await bot.delete_message(ctx.message)
-
-	msg = ''
-
-	for word in argv:
-		msg = msg + ' ' + word
-
-	for server in bot.servers:
-
-		if int(server.id) == int(server_id):
-
-			for member in server.members:
-				await asyncio.sleep(int(time))
-
-				try:
-					await bot.send_message(member, msg)
-
-				except:
-					pass
-		else:
-			pass
-
 @bot.command(pass_context=True, aliases=['exit'])
 async def stop(ctx):
 	await bot.delete_message(ctx.message)
