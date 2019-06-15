@@ -1,6 +1,6 @@
-# Ur4BOT
+# AroSBOT
 
-  Ur4BOT is a fun / utility discord self bot !
+  AroSBOT is a fun / utility discord self bot !
   
   ![HELP](http://image.noelshack.com/fichiers/2019/16/5/1555666494-capture.png)
 ## Warning !
