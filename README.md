@@ -1,13 +1,13 @@
 # AroSBOT
 
-  AroSBOT is a fun / utility discord self bot !
+  AroSBOT is a fun / utility discord selfbot !
   
   ![HELP](http://image.noelshack.com/fichiers/2019/16/5/1555666494-capture.png)
 ## Warning !
 
   1 - The discord.py library does not work with python versions greater than 3.6;
   
-  2 - Using a self bot in public on Discord is liable to a permanent ban of your account. If you get banned, the developer will
+  2 - Using a selfbot in public on Discord is liable to a permanent ban of your account. If you get banned, the developer will
   not be held responsible.
 
 # Installing
@@ -30,3 +30,7 @@
   ## Author
 
    **- Arobqze_**
+
+  ### My Friends :3
+
+   Aswane | nasm | SweeZ | Zark | Soon.
