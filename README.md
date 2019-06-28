@@ -33,4 +33,4 @@
 
   ### My Friends :3
 
-   Aswane | nasm | SweeZ | Zark | Soon.
+   Aswane | nasm | SweeZ | Winter | Zark | Soon.
