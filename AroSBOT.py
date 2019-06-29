@@ -119,7 +119,7 @@ async def embed(ctx, *argv):
         txt = txt + " " + word
 
     embed = discord.Embed(description=str(txt), color=color)
-    embed.set_footer(footer)
+    embed.set_footer(text=footer)
     await bot.say(embed=embed)
 
 
