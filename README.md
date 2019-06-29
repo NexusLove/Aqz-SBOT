@@ -19,14 +19,15 @@
 
    Python module :
    - discord;
-   - json;
+   - asyncio;
 
 # Informations
 
   ## Version
   
-   - 0.3 (24/03/2019) : **current**
-   - BETA (19/01/2019) : last
+   - 0.4 (29/06/2019) : **current**
+   - 0.3 (24/03/2019) : last
+   - BETA (19/01/2019)
 
   ## Developer
 
