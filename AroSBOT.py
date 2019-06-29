@@ -113,7 +113,8 @@ async def clear(ctx, nbr):
 @bot.command(pass_context=True, aliases=["emb", "e"])
 async def embed(ctx, *argv):
     await bot.delete_message(ctx.message)
-
+    txt = ""
+    
     for word in argv:
         txt = txt + " " + word
 
