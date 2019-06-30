@@ -174,14 +174,13 @@ async def load(ctx):
 @bot.command(pass_context=True, aliases=["lnick"])
 async def loadnick(ctx):
 	await bot.delete_message(ctx.message)
-	zero = 0
 
-	zero += zero
-	name = ""
+	while True:
+		name = ""
 
-	for letter in bot.user.name:
-		name = name + letter
-		await bot.change_nickname(ctx.message.author, name)
+		for letter in bot.user.name:
+			name = name + letter
+			await bot.change_nickname(ctx.message.author, name)
 
 
 @bot.command(pass_context=True, aliases=["mstream"])
