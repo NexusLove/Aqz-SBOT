@@ -48,7 +48,7 @@ async def status_task():
 async def options(ctx):
 	await bot.delete_message(ctx.message)
 	embed = discord.Embed(
-		title="**Install AroSBOT selfbot**",
+		title="**Install AroSBOT**",
 		url="https://github.com/Arobqse9/AroSBOT",
 		color=color,
 	)
@@ -98,16 +98,14 @@ async def options(ctx):
 @bot.command(pass_context=True, aliases=["purge"])
 async def clear(ctx, nbr):
 	await bot.delete_message(ctx.message)
-	msgs = []
 
-	async for msg in bot.logs_from(ctx.message.channel, limit=int(nbr) + 1):
-		msgs.append(msg)
+	async for msg in bot.logs_from(ctx.message.channel, limit=int(nbr)):
+		
+		try:
+			await bot.delete_message(msg)
 
-	try:
-		await bot.delete_messages(msgs)
-
-	except:
-		pass
+		except:
+			pass
 
 
 @bot.command(pass_context=True, aliases=["emb", "e"])
@@ -119,7 +117,6 @@ async def embed(ctx, *argv):
 		txt = txt + " " + word
 
 	embed = discord.Embed(description=str(txt), color=color)
-	embed.set_footer(text=footer)
 	await bot.say(embed=embed)
 
 
