@@ -35,4 +35,4 @@
 
   ### My Friends :3
   
-   Aswane | nasm | SweeZ | Winter | Zark | Soon.
+   Aswane | nasm | SweeZ | Bueno | Winter | Zark | Soon.
