@@ -32,7 +32,3 @@
   ## Developer
 
    **- Arobqze_**
-
-  ### My Friends :3
-  
-   Aswane | nasm | SweeZ | Bueno | Winter | Zark | Soon.
