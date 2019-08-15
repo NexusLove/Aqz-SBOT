@@ -13,7 +13,7 @@ AroSBOT is a fun / utility Discord selfbot !
 
   ## Dependencies
 
-   [Python 3.6.x](https://www.python.org/downloads/release/python-360/)
+   [Python 3.7.x](https://www.python.org/downloads/release/python-370/)
 
  ```bash
  pip install -r requirements.txt
