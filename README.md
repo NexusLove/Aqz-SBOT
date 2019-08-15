@@ -21,7 +21,7 @@ AroSBOT is a fun / utility Discord selfbot !
 
  ## Setting-up
 
-- you have to edit **core/settings.json** like that :
+- you have to edit **settings.json** like that :
 ```json
 {
 	"login": {
