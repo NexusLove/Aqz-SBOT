@@ -1,6 +1,6 @@
-# AroSBOT
+# Aqz-SBOT
 
-AroSBOT is a fun / utility Discord selfbot !
+Aqz-SBOT is a fun / utility Discord selfbot !
 
 ## Warning !
 
