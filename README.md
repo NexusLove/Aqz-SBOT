@@ -1,3 +1,5 @@
+ # /!\ REUPLOAD SOON /!\
+
 # Aqz-SBOT
 
 Aqz-SBOT is a fun / utility Discord selfbot !
