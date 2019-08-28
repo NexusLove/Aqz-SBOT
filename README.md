@@ -3,7 +3,7 @@
 
 # Aqz-SBOT
 
-[![Python 3.X](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/downloads/release/python-370/)
+[![Python 3.X](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
   ## ⚠️ Warning !
    - The discord.py library does not work with python versions greater than 3.6;
@@ -47,6 +47,8 @@
   - BETA 0.3 (24/03/2019) : last.
   - BETA 0.1 (19/01/2019).
 
-  ## 🤵 Developer
+  ## 🤵 Developer - Contributors
   
   - Arobqze_
+  
+  - MoonCake (some cmd's ideas)
