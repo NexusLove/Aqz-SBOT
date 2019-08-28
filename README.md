@@ -2,7 +2,7 @@
 
 # Aqz-SBOT
 
-Aqz-SBOT is a fun / utility Discord selfbot !
+[![Python 3.X](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/downloads/release/python-370/)
 
 ## Warning !
 
