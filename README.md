@@ -47,8 +47,8 @@
   - BETA 0.3 (24/03/2019) : last.
   - BETA 0.1 (19/01/2019).
 
-  ## 🤵 Developer - Contributors
+  ## 🤵 Developers | 🙋 Contributors
   
-  - Arobqze_
+  - 🤵 Arobqze_
   
-  - MoonCake (some cmd's ideas)
+  - 🙋 MoonCake (some cmd's ideas)
