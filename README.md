@@ -25,17 +25,13 @@
 
 ```json
 {
-	"login": {
-		"token": "[token]",
-		"prefix": "[cmd prefix]"
-	},
-
-	"stream": {
-		"link": "https://twitch.tv/[username]",
-		"1": "[1ST sentence of multistream]",
-		"2": "[2ND sentence of multistream]",
-		"3": "[3RD sentence of multistream]"
-	}
+	"token": "[token]",
+	"prefix": "[cmd prefix]"
+	
+	"link": "https://twitch.tv/[username]",
+	"1": "[1ST sentence of multistream]",
+	"2": "[2ND sentence of multistream]",
+	"3": "[3RD sentence of multistream]"
 }
 ```
 
