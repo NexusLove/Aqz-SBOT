@@ -26,7 +26,7 @@
 ```json
 {
 	"token": "[token]",
-	"prefix": "[cmd prefix]"
+	"prefix": "[cmd prefix]",
 	
 	"link": "https://twitch.tv/[username]",
 	"1": "[1ST sentence of multistream]",
