@@ -39,8 +39,9 @@
 
   ## 📈 Version
   
-  - BETA 0.4 (29/06/2019) : **current**.
-  - BETA 0.3 (24/03/2019) : last.
+  - BETA 0.5 (29/06/2019) : **current**.
+  - BETA 0.4 (29/06/2019) : last.
+  - BETA 0.3 (24/03/2019).
   - BETA 0.1 (19/01/2019).
 
   ## 🤵 Developers | 🙋 Contributors
