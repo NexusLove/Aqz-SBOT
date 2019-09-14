@@ -1,6 +1,3 @@
-
- # /!\ REUPLOAD SOON /!\
-
 # Aqz-SBOT
 
 [![Python 3.X](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
