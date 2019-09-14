@@ -83,7 +83,7 @@ async def options(ctx, category=None):
 	embed.add_field(
 		name="/load <time>", value="`The message will looooooooooad.`", inline=False
 	)
-	embed.add_field(name="/loadnick | lnick", value="`I N S A N E`", inline=False)
+	# embed.add_field(name="/loadnick | lnick", value="`I N S A N E`", inline=False)
 	embed.add_field(
 		name="/mstreaming | mstream <txt>",
 		value="`Community manager ! :p`",
@@ -102,7 +102,7 @@ async def options(ctx, category=None):
 		name="/watch | look <txt>", value="`I am watching you.`", inline=False
 	)
 	# embed.add_field(name="/quote | qt", value="`Do not deny it, you said it.`", inline=False)
-	embed.add_field(name="/spamreact | sreact", value="`COMCOMBRE !!!`", inline=False)
+	# embed.add_field(name="/spamreact | sreact", value="`COMCOMBRE !!!`", inline=False)
 	embed.add_field(
 		name="/exit | stop", value="`Hoping to see you again.`", inline=False
 	)
