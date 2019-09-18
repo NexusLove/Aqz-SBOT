@@ -1,8 +1,8 @@
 {
-	"token": "433107870825840640",
-	"prefix": "Zz",
+	"token": "[token]",
+	"prefix": "[cmd prefix]",
 	
-	"link": "https://youtube.com/NexusLove",
+	"link": "https://twitch.tv/[username]",
 	"1": "[1ST sentence of multistream]",
 	"2": "[2ND sentence of multistream]",
 	"3": "[3RD sentence of multistream]"
