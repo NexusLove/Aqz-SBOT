@@ -14,7 +14,7 @@ import json
 with open("settings.json", "r") as dump:
 	settings = json.load(dump)
 
-footer, color, link = ("Aqz'SBOT • by Arobqze_", 0xFAF684, settings["link"])
+footer, color, link = ("HiveNet • by NexusLove", 0xFAF684, settings["link"])
 
 bot = commands.Bot(command_prefix=settings["prefix"], self_bot=True)
 bot.remove_command("help")
@@ -47,20 +47,20 @@ async def options(ctx, category=None):
 
 	"""
 	if category == None:
-		embed = discord.Embed(title="**Install Aqz'SBOT**", url="https://github.com/ArobqZe/Aqz-SBOT", color=0xFF7676)
+		embed = discord.Embed(title="**Install HiveNet**", url="https://github.com/NexusLove/", color=0xFF7676)
 		embed.set_author(name="Help - Options")
 		embed.add_field(name="Help gui's", value="• fun\n• util\n• status\n• other\n• all", inline=True)
 
 	elif category == "fun":
 		embed = discord.Embed(title="Fun Help")
 
-	embed.set_footer(text="Aqz'SBOT • by Arobqze_")
+	embed.set_footer(text="HiveNet • by NexusLove")
 	await ctx.send(embed=embed)
 
 	"""
 	embed = discord.Embed(
-		title="**Install Aqz'SBOT**",
-		url="https://github.com/ArobqZe/Aqz-SBOT",
+		title="**Install HiveNeg**",
+		url="https://github.com/NexusLove",
 		color=color,
 	)
 	embed.set_author(name="Help | Options")
