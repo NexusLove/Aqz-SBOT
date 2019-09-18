@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-# Aqz'SBOT by Arobqze_
 
 from discord.ext import commands
 import discord
@@ -59,7 +56,7 @@ async def options(ctx, category=None):
 
 	"""
 	embed = discord.Embed(
-		title="**Install HiveNeg**",
+		title="**Install HiveNet**",
 		url="https://github.com/NexusLove",
 		color=color,
 	)
